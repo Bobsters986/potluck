@@ -35,7 +35,7 @@ RSpec.describe Potluck do
         expect(potluck.get_all_from_category(:appetizer).first.name).to eq("Couscous Salad")
     end
 
-    it "get_all_from_category" do
+    it "show menu hash" do
         potluck.add_dish(couscous_salad)
         potluck.add_dish(summer_pizza)
         potluck.add_dish(roast_pork)
@@ -51,7 +51,7 @@ RSpec.describe Potluck do
         expect(potluck.menu).to eq(expected_results)
     end
 
-    xit "#ratio" do
+    it "#ratio" do
         potluck.add_dish(couscous_salad)
         potluck.add_dish(summer_pizza)
         potluck.add_dish(roast_pork)
@@ -59,7 +59,6 @@ RSpec.describe Potluck do
         potluck.add_dish(candy_salad)
         potluck.add_dish(bean_dip)
 
-        expect(potluck.ratio(:appetizer))
+        expect(potluck.ratio(:appetizer)).to eq (50.0)
     end
-
 end

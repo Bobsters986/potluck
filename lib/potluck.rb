@@ -33,4 +33,10 @@ class Potluck
             desserts: dessert_names_array
         }
     end
+
+    def ratio(category)
+        x = get_all_from_category(category).count.to_f / @dishes.count
+        percentage = x * 100
+        percentage.round(1)
+    end
 end
